@@ -1,0 +1,433 @@
+/* Fonts */
+
+@font-face {
+    font-family: "Equip";
+    src: url("fonts/EquipLig-webfont.eot");
+    src: url("fonts/EquipLig-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/EquipLig-webfont.woff2") format("woff2"),
+         url("fonts/EquipLig-webfont.woff") format("woff"),
+         url("fonts/EquipLig-webfont.ttf") format("truetype"),
+         url("fonts/EquipLig-webfont.svg#equiplight") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Museo";
+    src: url("fonts/MuseoSans_500-webfont.eot");
+    src: url("fonts/MuseoSans_500-webfont.eot?#iefix") format("embedded-opentype"),
+         url("fonts/MuseoSans_500-webfont.woff2") format("woff2"),
+         url("fonts/MuseoSans_500-webfont.woff") format("woff"),
+         url("fonts/MuseoSans_500-webfont.ttf") format("truetype"),
+         url("fonts/MuseoSans_500-webfont.svg#museo_sans500") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Base Elements */
+
+* {
+    font-family: Equip, Arial, sans-serif;
+}
+
+html {
+    height: 99%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-family: Equip, Arial, sans-serif !important;
+    text-decoration: none !important;
+    color: rgb(150, 150, 150) !important;
+    transition: all 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+a:visited {
+
+}
+
+a:hover {
+    color: #000 !important;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    image-rendering: optimizeQuality;
+    vertical-align: middle;
+}
+
+/* Layout - Top Banner */
+
+.spacer-container {
+    display: block;
+    z-index: 5000;
+    position: fixed;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.upper-spacer-container {
+    top: 0;
+    padding-top: 5rem;
+}
+
+.lower-spacer-container {
+    top: 815px;
+}
+
+.spacer-group {
+    box-sizing: border-box;
+    width: 1024px;
+    margin: 0 auto;
+    height: 0px;
+    padding-left: 236px;
+}
+
+.slide-cap {
+    display: none;
+    float: left;
+    height: 0px;
+    width: 230px;
+    margin-left: 23px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+/* Layout - Main Content Area */
+
+#main {
+    width: 1024px;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+/* Layout - Left Menu */
+
+#left {
+    position: fixed;
+    box-sizing: border-box;
+    width: 236px;
+    min-height: 100px;
+}
+
+#filter-group, 
+#filter-type-group, 
+#sort-group {
+    margin-bottom: 36px;
+}
+
+.header {
+    margin-top: 0;
+    font-family: Museo, Equip, Arial, sans-serif !important;
+    text-rendering: geometricPrecision;
+}
+
+.logo {
+    margin-top: -6px;
+    margin-bottom: 36px;
+    font-family: Museo, Equip, Arial, sans-serif !important;
+    text-rendering: geometricPrecision;
+}
+
+.menu {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    font-size: 0.9rem;
+    color: rgb(150, 150, 150);
+    text-transform: capitalize;
+    cursor: pointer;
+    /* easeInQuad transition from: http://matthewlein.com/ceaser/ */
+    transition: color 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+.menu:hover {
+    color: #000;
+}
+
+.active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Layout - Right Gallery */
+
+#right {
+    float: left;
+    box-sizing: border-box;
+    height: 736px;
+    max-height: 736px;
+    width: 788px;
+    max-width: 788px;
+    margin-left: 236px;
+}
+
+#gallery-content {
+    height: 759px;
+    max-height: 759px;
+    width: 788px;
+    max-width: 788px;
+    margin-top: -23px;
+}
+
+/* Scrollbar */
+
+.nano {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.nano > .nano-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.nano > .nano-content:focus {
+    outline: none;
+}
+
+.nano > .nano-content::-webkit-scrollbar {
+    display: none;
+}
+
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+    display: block;
+}
+
+.nano > .nano-pane {
+    background: rgb(200, 200, 200);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    visibility: hidden\9;
+    opacity: 0.01;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms;
+}
+
+.nano > .nano-pane > .nano-slider {
+    background: rgb(150, 150, 150);
+    position: relative;
+    margin: 0;
+}
+
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+    visibility: visible\9;
+    opacity: 0.99;
+}
+
+/* Loading */
+
+#loading {
+    height: 20px;
+    width: 20px;
+    margin-top: 70px;
+    margin-left: 70px;
+    color: rgb(160, 160, 160);
+    font-family: Museo, Equip, Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    animation-name: bounce;
+    -o-animation-name: bounce;
+    -ms-animation-name: bounce;
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    animation-duration: 1.75s;
+    -o-animation-duration: 1.75s;
+    -ms-animation-duration: 1.75s;
+    -webkit-animation-duration: 1.75s;
+    -moz-animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    -o-animation-direction: alternate-reverse;
+    -ms-animation-direction: alternate-reverse;
+    -webkit-animation-direction: alternate-reverse;
+    -moz-animation-direction: alternate-reverse;
+    transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+        
+}
+
+#loading-inner {
+    animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    -ms-animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+}
+
+@keyframes bounce{
+    0% {
+        transform: scale(1.0);
+        color: rgb(150, 150, 150);
+    }
+    100% {
+        transform: scale(0.5);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@-o-keyframes bounce{
+    0% {
+        -o-transform: scale(1.0);
+        color: rgb(150, 150, 150);
+    }
+    100% {
+        -o-transform: scale(0.5);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@-ms-keyframes bounce{
+    0% {
+        -ms-transform: scale(1.0);
+        color: rgb(150, 150, 150);
+    }
+    100% {
+        -ms-transform: scale(0.5);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@-webkit-keyframes bounce{
+    0% {
+        -webkit-transform: scale(1.0);
+        color: rgb(150, 150, 150);
+    }
+    100% {
+        -webkit-transform: scale(0.5);
+        color: rgb(255, 255, 255);
+    }
+}
+
+@-moz-keyframes bounce{
+    0% {
+        -moz-transform: scale(1.0);
+        color: rgb(150, 150, 150);
+    }
+    100% {
+        -moz-transform: scale(0.5);
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* Slides */
+
+.slide-box {
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    height: 230px;
+    width: 230px;
+    margin: 23px 0px 0px 23px;
+    padding: 14px 12px 8px 12px;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.slide-text {
+    float: left;
+    width: 100%;
+    font-size: 0.667rem;
+    color: rgb(100, 100, 100);
+}
+
+.slide-text-first-row {
+    margin: 14px 0 0 0;
+}
+
+.slide-text-second-row {
+    margin: 4px 0 0 0;
+}
+
+.slide-image-container {
+    float: left;
+    position: relative;
+    height: 160px;
+    width: 100%;
+}
+
+/*
+    Horizontally and vertically center images. Source:
+        http://stackoverflow.com/questions/15443230/vertically-center-responsive-image
+*/
+.slide-image {
+    float: left;
+    display: block;
+    height: 160px;
+    width: 160px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* Layout - Lightbox Modal */
+
+#modal-overlay {
+    z-index: 1000000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vw;
+    width: 100vw;
+    background-color: #000;
+    cursor: pointer;
+}
+
+#modal-photo {
+    float: left; 
+    min-height: 40vw;
+    min-width: 60vw;
+    background-color: #000;
+}
+
+#modal-exif-list { 
+    transition: background-color 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
+
+#modal-exif-list:hover {
+    background-color: #fff !important;
+}
+
+.modal-exif-header {
+    font-family: Museo, Equip, Arial, sans-serif !important;
+    text-rendering: geometricPrecision;
+    text-decoration: underline;
+}
+
+.modal-invisible {
+    opacity: 0 !important;
+}
+
+.modal-transition {
+    transition: opacity 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750);
+}
