@@ -1,6 +1,6 @@
 ## Isotope.js Portfolio Template
 
-A photo portfolio microsite template. The site uses [Isotope.js](http://isotope.metafizzy.co/) for photo sorting with [Handlebars.js](http://handlebarsjs.com/) templating for the layout. The modal view for each photo retrieves and shows any EXIF data recorded for it via [exif.js](https://github.com/exif-js/exif-js). The gallery layout itself is configurable through a JSON file:
+A photo portfolio microsite template. The site uses [Isotope.js](http://isotope.metafizzy.co/) for photo sorting with [Handlebars.js](http://handlebarsjs.com/) templating for the layout. The modal view for each photo retrieves and shows any EXIF data recorded for it via [Exif.js](https://github.com/exif-js/exif-js). The gallery layout itself is configurable through a JSON file:
 
 ```javascript
 { 
