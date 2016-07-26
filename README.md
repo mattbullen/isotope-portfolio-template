@@ -24,4 +24,4 @@ A photo portfolio microsite template. The site uses [Isotope.js](http://isotope.
 
 The `list` array holds a list of image file names and the sort category for each. The `sort` array sets the menu options for sorting the images on the page. The `random` value sets the display order on page load to either the same as in the JSON list or to a random sort. The remaining `filter` options set the first menu category to display, whether or not to set the menu to select/view multiple categories at the same time, and optional display labels for each category of photo.
 
-##### Try it out: http://bullen.io/isotope-portfolio-template/index.html
+##### Try it out: www.matthewbullen.net/isotope-portfolio-template/index.html
